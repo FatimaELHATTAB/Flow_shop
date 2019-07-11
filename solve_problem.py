@@ -23,7 +23,7 @@ def read_matrix(problem,machine,jobs):
     j = 0
     fin.readline()
     for line in fin.readlines():
-        print(line)
+
         j = 0
         for x in line.split(' '):
             a[i, j] = int(x)

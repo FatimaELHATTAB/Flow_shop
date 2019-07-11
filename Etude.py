@@ -37,5 +37,6 @@ def test_AG(instance, job, machine):
             for g in list_generation:
                 sequence, makespan = solve_problem.solve_benchmark_problem(instance, job, machine, o, g, p)
                 makespan_list.append(makespan)
+    print("mutations probabilite: ", p, "generation", g, "population", o)
     print(makespan_list)
     print(np.min(makespan_list))
