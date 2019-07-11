@@ -12,18 +12,20 @@ def read_problem(sheet, prob_num):
     timeseed = sheet.cell(row=prob_num+3, column=3).value
     prev_makespan = sheet.cell(row=prob_num+3, column=6).value
 
-    return jobs, machines, ptimeseed, prev_makespan
+    return jobs, machines, timeseed, prev_makespan
 
 def read_matrix(problem,machine,jobs):
     file_name = str(problem) + str(machine) + str(jobs) + ".txt"
-    fin = open(file_name, 'r')
+    fin = open("instance/"+file_name, 'r')
 
     a = np.ndarray((machine, jobs))
     i = 0
     j = 0
+    fin.readline()
     for line in fin.readlines():
+        print(line)
         j = 0
-        for x in line.split(','):
+        for x in line.split(' '):
             a[i, j] = int(x)
 
             j = j + 1
